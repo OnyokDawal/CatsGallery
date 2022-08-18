@@ -16,6 +16,8 @@ import Lightbox from 'react-native-lightbox';
 import catsApi from "../apis/CatsApi";
 import CatsCard from "../Components/CatsCard";
 
+const { width, height } = Dimensions.get("window");
+
 const Cats = ({navigator}) =>{
     const [cat, setCat] = useState('');
 
@@ -27,7 +29,7 @@ const Cats = ({navigator}) =>{
 
     function getCatsGalleryAPI(){
         catsApi
-        .get(`https://api.thecatapi.com/v1/images/search?limit=3&page=1`, {
+        .get(`https://api.thecatapi.com/v1/images/search?limit=10&page=1`, {
             headers:{
                 "x-api-key":"c7ee284d-8365-49f5-be3e-4c36bf40846e"
             },
@@ -46,12 +48,18 @@ const Cats = ({navigator}) =>{
 
             <FlatList
             data={cat.data}
+            numColumns={3}
             showsVerticalScrollIndicator = {false}
             keyExtractor={(item, index) => "key" + index}
             renderItem={({ item }) => {
                     return(
                        
-                            <CatsCard item={item}/>
+                        <Lightbox navigator={navigator}>
+                        <Image
+                            style={styles.imageStyle}
+                            source={{ uri: `${item.url}` }}
+                        />
+                    </Lightbox>
                     )
                 }}
             />
@@ -60,5 +68,13 @@ const Cats = ({navigator}) =>{
 
 
 }
+
+const styles = StyleSheet.create({
+    imageStyle: {
+      height: height / 3, 
+      width: width / 3,
+      marginTop:.5,
+      borderRadius: width * 0.01,
+    }});
 
 export default Cats
