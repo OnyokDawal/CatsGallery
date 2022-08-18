@@ -43,7 +43,7 @@ const Cats = ({navigator}) =>{
     if(!cat){
         return null;
     }
-    // console.log(cat)
+
     return(
 
             <FlatList
@@ -54,7 +54,7 @@ const Cats = ({navigator}) =>{
             renderItem={({ item }) => {
                     return(
                        
-                        <Lightbox navigator={navigator}>
+                    <Lightbox navigator={navigator}>
                         <Image
                             style={styles.imageStyle}
                             source={{ uri: `${item.url}` }}
