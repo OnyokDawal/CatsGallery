@@ -27,7 +27,7 @@ const Cats = ({navigator}) =>{
 
     function getCatsGalleryAPI(){
         catsApi
-        .get(`https://api.thecatapi.com/v1/images/search?limit=10&page=1`, {
+        .get(`https://api.thecatapi.com/v1/images/search?limit=3&page=1`, {
             headers:{
                 "x-api-key":"c7ee284d-8365-49f5-be3e-4c36bf40846e"
             },
