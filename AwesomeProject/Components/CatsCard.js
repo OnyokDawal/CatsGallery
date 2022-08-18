@@ -19,26 +19,21 @@ const { width, height } = Dimensions.get("window");
 
 const CatsCard = ({ item, navigator }) => {
 
-    // console.log(item.url)
-
   return (
-    <View style={styles.cardView}>
+
 
         <Lightbox navigator={navigator}>
             <Image
-                style={{ height: 300 }}
+                style={{ height: 50, width:50}}
                 source={{ uri: `${item.url}` }}
             />
         </Lightbox>
         
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
   cardView: {
-    overflow: "hidden",
-    height: 300,
     marginTop:.5,
     borderRadius: width * 0.01,
   }});
