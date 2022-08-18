@@ -24,6 +24,7 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Cats from './Screen/Cats';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -33,9 +34,9 @@ const App = () => {
   };
 
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <Text>Hello</Text>
-    </SafeAreaView>
+    // <SafeAreaView style={backgroundStyle}>
+      <Cats/>
+    // </SafeAreaView>
   );
 };
 
