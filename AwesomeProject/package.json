@@ -10,9 +10,12 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@react-native-picker/picker": "^2.4.4",
     "axios": "^0.27.2",
     "react": "18.0.0",
-    "react-native": "0.69.4"
+    "react-native": "0.69.4",
+    "react-native-lightbox": "^0.8.1",
+    "react-native-picker-select": "^8.0.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
